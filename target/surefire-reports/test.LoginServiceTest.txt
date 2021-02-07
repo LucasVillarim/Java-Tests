@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: test.LoginServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.004 s <<< FAILURE! - in test.LoginServiceTest
+test.LoginServiceTest  Time elapsed: 0.002 s  <<< ERROR!
+org.junit.platform.commons.JUnitException: @BeforeAll method 'void test.LoginServiceTest.setupTheTest()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS).
+

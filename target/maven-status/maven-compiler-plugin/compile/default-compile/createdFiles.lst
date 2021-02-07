@@ -1,0 +1,9 @@
+com\bankline\Main.class
+com\bankline\models\Usuario.class
+com\bankline\models\Conta.class
+com\bankline\models\Lancamento.class
+com\bankline\models\Transferencia.class
+com\bankline\repository\UsuariosRepository.class
+com\bankline\models\PlanoConta.class
+com\bankline\services\LoginService.class
+com\bankline\services\Registro.class
