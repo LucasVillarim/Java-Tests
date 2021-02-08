@@ -1,11 +1,12 @@
 package com.bankline.models;
 
 public class PlanoConta {
-	String descricao;
+	private String descricao;
 	//Receita ou Despesa.
-	String finalidade;
+	private String finalidade;
 	
 	public PlanoConta(String descricao, String finalidade) {
-		
+		this.descricao = descricao;
+		this.finalidade = finalidade;
 	}
 }

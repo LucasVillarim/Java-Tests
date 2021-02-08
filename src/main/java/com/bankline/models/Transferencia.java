@@ -1,12 +1,12 @@
 package com.bankline.models;
 
 public class Transferencia {
-	Conta contaDestino;
-	String descricao;
-	Integer id;
-	String login;
-	Boolean padrao;
-	char tipoMovimento;
+	private Conta contaDestino;
+	private String descricao;
+	private Integer id;
+	private String login;
+	private Boolean padrao;
+	private char tipoMovimento;
 	
 	public Transferencia(
 			Conta contaDestino, 

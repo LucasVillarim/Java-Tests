@@ -2,21 +2,27 @@ package com.bankline;
 
 import com.bankline.models.Usuario;
 import com.bankline.repository.UsuariosRepository;
+import com.bankline.services.LoginService;
+import com.bankline.services.RegistroService;
 
 public class Main {
 
-	public static void main(String[] args) {
-		Usuario user = new Usuario("11094722421", "Lucas Villarim", "lvillarim","123456");
+	public static void main(String[] args) throws Exception {
+		Usuario user = new Usuario("11094722421", "Lucas Villarim", "lvillarim", "123456");
 		Usuario user2 = new Usuario("11094722421", "Lucas Villarim", "lvillarim2","123456");
-		Usuario user3 = new Usuario("11094722421", "Lucas Villarim", "lvillarim3","123456");
-		UsuariosRepository repo = new UsuariosRepository();
 		
-		System.out.println(repo.cadastrar(user));
-		System.out.println(repo.cadastrar(user2));
-		System.out.println(repo.cadastrar(user3));
-		System.out.println(repo.cadastrar(user));
-		System.out.println(repo.cadastrar(user2));
-		System.out.println(repo.cadastrar(user3));
+		RegistroService newUser = new RegistroService();
+		LoginService loginUser = new LoginService();
+		
+//		Para ver se os dados estão sendo guardados corretamente no HashSet.
+		System.out.println(newUser.cadastrar(user));
+		System.out.println(newUser.cadastrar(user2));
+		System.out.println(newUser.cadastrar(user));
+
+		// Login
+		System.out.println(loginUser.logar(user.getLogin(), user.getSenha()));
+//		System.out.println(loginUser.logar(user2));
+
 	}
 
 }

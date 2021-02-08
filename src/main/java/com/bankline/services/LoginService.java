@@ -1,13 +1,15 @@
 package com.bankline.services;
 
 import com.bankline.models.Conta;
+import com.bankline.repository.UsuariosRepository;
 
 public class LoginService {
 	Conta conta;
-	
-	public Conta login(String login, String senha) {
-		//
-		return conta;
-	}
+	UsuariosRepository cadastradosRepository = new UsuariosRepository();
 
+	
+	public String logar(String login, String senha) {
+		String tentativaLogin = cadastradosRepository.getUser(login, senha);
+		return tentativaLogin;
+	}
 }

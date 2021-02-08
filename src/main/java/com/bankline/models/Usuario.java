@@ -1,12 +1,15 @@
 package com.bankline.models;
 
 public class Usuario {
-	String cpf;
-	String nome;
-	String login;
-	String senha;
+	private String cpf;
+	private String nome;
+	private String login;
+	private String senha;
 	
-	public Usuario(String cpf, String nome, String login, String senha) {
+	public Usuario(String cpf, String nome, String login, String senha) throws Exception {
+		if (login.length() > 20) {
+			throw new Exception("O login não deve conter mais que 20 caracteres.");
+		}
 		this.cpf = cpf;
 		this.nome = nome;
 		this.login = login;

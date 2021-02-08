@@ -6,16 +6,19 @@ import java.util.Set;
 import com.bankline.models.Usuario;
 
 public class UsuariosRepository {
-	Set<Usuario> cadastrados = new HashSet<Usuario>();
+	public Set<Usuario> cadastrados = new HashSet<Usuario>();
 
-	public String cadastrar(Usuario user) {
-		
-		for (Usuario registeredUser : cadastrados) {
-			if (registeredUser.getLogin() == user.getLogin()) {
-				return registeredUser.getLogin();
+	public void addUser(Usuario user) {
+		cadastrados.add(user);
+	}
+
+	public String getUser(String login, String senha) {
+		for (Usuario user: cadastrados) {
+			if (user.getLogin() == login && user.getSenha() == senha) {
+				return login;
 			}
 		}
-		cadastrados.add(user);
-		return "cadastrou";
+
+		return null;
 	}
 }
